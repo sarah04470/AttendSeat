@@ -111,7 +111,7 @@ export default function Dashboard() {
   const protectedPaths = [
     '/students/edit', '/students/default-room',
     '/attendance/manage',
-    '/rooms/', '/settings/',
+    '/rooms/seats', '/settings/',
   ];
 
   const handleLogout = async () => {
@@ -297,30 +297,28 @@ export default function Dashboard() {
               )}
             </Collapse>
 
-            {/* 장소 관리 - 슈퍼관리자 전용 */}
-            {userAuth >= 10 && (
-              <>
-                <ListItemButton onClick={() => setRoomOpen(!roomOpen)}>
-                  <ListItemIcon><MeetingRoom /></ListItemIcon>
-                  <ListItemText primary="장소 관리" />
-                  {roomOpen ? <ExpandLess /> : <ExpandMore />}
+            {/* 장소 관리 - 목록은 비로그인 가능, 좌석관리는 중간관리자+ */}
+            <ListItemButton onClick={() => setRoomOpen(!roomOpen)}>
+              <ListItemIcon><MeetingRoom /></ListItemIcon>
+              <ListItemText primary="장소 관리" />
+              {roomOpen ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+            <Collapse className={'sub-menu'} in={roomOpen} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItemButton className="sub-menu-item" component={NavLink} to="/rooms/list">
+                  <ListItemIcon></ListItemIcon>
+                  <ListItemText primary="장소 목록" className={isActivePrefix('/rooms/list') ? 'on' : ''} />
                 </ListItemButton>
-                <Collapse className={'sub-menu'} in={roomOpen} timeout="auto" unmountOnExit>
-                  <List component="div" disablePadding>
-                    <ListItemButton className="sub-menu-item" component={NavLink} to="/rooms/list">
-                      <ListItemIcon></ListItemIcon>
-                      <ListItemText primary="장소 목록" className={isActivePrefix('/rooms/list') ? 'on' : ''} />
-                    </ListItemButton>
-                  </List>
-                  <List component="div" disablePadding>
-                    <ListItemButton className="sub-menu-item" component={NavLink} to="/rooms/seats">
-                      <ListItemIcon></ListItemIcon>
-                      <ListItemText primary="좌석 관리" className={isActivePrefix('/rooms/seats') ? 'on' : ''} />
-                    </ListItemButton>
-                  </List>
-                </Collapse>
-              </>
-            )}
+              </List>
+              {userAuth >= 8 && (
+                <List component="div" disablePadding>
+                  <ListItemButton className="sub-menu-item" component={NavLink} to="/rooms/seats">
+                    <ListItemIcon></ListItemIcon>
+                    <ListItemText primary="좌석 관리" className={isActivePrefix('/rooms/seats') ? 'on' : ''} />
+                  </ListItemButton>
+                </List>
+              )}
+            </Collapse>
 
             {/* 설정 - 슈퍼관리자 전용 */}
             {userAuth >= 10 && (

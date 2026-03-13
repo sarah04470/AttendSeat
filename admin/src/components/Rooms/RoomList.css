@@ -1,0 +1,354 @@
+/* 장소 목록 */
+.room-list {
+  padding: 24px;
+}
+
+.room-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.room-list-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.room-list-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+
+.room-list-total {
+  font-size: 15px;
+  color: #999;
+}
+
+.room-add-btn {
+  padding: 10px 20px;
+  background: #4b6a8a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.room-add-btn:hover {
+  background: #3d5a78;
+}
+
+/* 필터 */
+.room-filter-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.room-filter-btn {
+  padding: 8px 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: #999;
+  transition: all 0.15s;
+}
+
+.room-filter-btn:hover {
+  border-color: #b0c4de;
+  color: #5a7fa0;
+  background: #f7fafd;
+}
+
+.room-filter-btn.active {
+  background: #eef4fb;
+  color: #4a7fac;
+  border-color: #c2d6ea;
+  font-weight: 600;
+}
+
+/* 섹션 */
+.room-section {
+  margin-bottom: 28px;
+}
+
+.room-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.room-section-title {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.room-section-title.art {
+  color: #8a70b0;
+}
+
+.room-section-title.music {
+  color: #4a7fac;
+}
+
+.room-section-title.study {
+  color: #5a9a72;
+}
+
+.room-section-count {
+  font-size: 14px;
+  color: #999;
+}
+
+/* 카드 그리드 */
+.room-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.room-card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.15s;
+}
+
+.room-card:hover {
+  border-color: #d0d8e0;
+}
+
+.room-card-body {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.room-card-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.room-card-floor {
+  font-size: 13px;
+  color: #999;
+  background: #f5f5f5;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.room-card-cap {
+  font-size: 13px;
+  color: #7aa3cc;
+}
+
+.room-card-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.room-edit-btn,
+.room-delete-btn {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.room-edit-btn {
+  background: #f5f7fa;
+  color: #5a7fa0;
+  border: 1px solid #d8e2ec;
+}
+
+.room-edit-btn:hover {
+  background: #eaf1f8;
+}
+
+.room-delete-btn {
+  background: #fff;
+  color: #c0756b;
+  border: 1px solid #e8d0cc;
+}
+
+.room-delete-btn:hover {
+  background: #fdf5f4;
+}
+
+.room-no-data {
+  text-align: center;
+  padding: 60px 40px;
+  color: #bbb;
+  font-size: 16px;
+}
+
+/* 모달 - StudentList.css 의 edit-overlay/modal 재사용 */
+.room-list .edit-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1200;
+}
+
+.room-list .edit-modal {
+  background: #fff;
+  border-radius: 12px;
+  width: 440px;
+  max-width: 88vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.room-list .edit-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.room-list .edit-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.room-list .edit-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.room-list .edit-modal-close:hover {
+  color: #555;
+}
+
+.room-list .edit-modal-body {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.room-list .edit-row {
+  display: flex;
+  gap: 14px;
+}
+
+.room-list .edit-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.room-list .edit-field.wide {
+  flex: 1.5;
+}
+
+.room-list .edit-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+}
+
+.room-list .edit-input,
+.room-list .edit-select {
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #333;
+  background: #fff;
+  transition: border-color 0.15s;
+}
+
+.room-list .edit-input:focus,
+.room-list .edit-select:focus {
+  outline: none;
+  border-color: #a0b8d0;
+}
+
+.room-list .edit-select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+.room-list .edit-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 24px 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.room-list .edit-cancel-btn {
+  padding: 10px 24px;
+  background: #fff;
+  color: #888;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.room-list .edit-cancel-btn:hover {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.room-list .edit-save-btn {
+  padding: 10px 28px;
+  background: #4b6a8a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.room-list .edit-save-btn:hover {
+  background: #3d5a78;
+}
+
+.room-list .edit-save-btn:disabled {
+  background: #a0b0c0;
+  cursor: not-allowed;
+}

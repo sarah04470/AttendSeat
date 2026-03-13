@@ -6,6 +6,7 @@ import api from "../api/axios";
 import Dashboard from "../components/Dashboard/Dashboard.jsx";
 import Login from "../components/Login/Login.jsx";
 import StudentPage from "../components/Students/StudentPage.jsx";
+import RoomList from "../components/Rooms/RoomList.jsx";
 
 // 중간관리자 이상 (mem_auth >= 8) - 학생정보 수정, 자리 이동/수정
 function ManagerRoute({ children }) {
@@ -83,9 +84,9 @@ function AppRouterContent() {
         <Route path="students/default-room" element={<ManagerRoute><div className="table-widget"><div className="table-title">기본 배정</div><p>준비중</p></div></ManagerRoute>} />
         <Route path="attendance/manage" element={<ManagerRoute><div className="table-widget"><div className="table-title">자리 이동/수정</div><p>준비중</p></div></ManagerRoute>} />
 
-        {/* 슈퍼관리자(10) - 장소/좌석 CRUD, 계정관리, 모든 설정 */}
-        <Route path="rooms/list" element={<SuperRoute><div className="table-widget"><div className="table-title">장소 목록</div><p>준비중</p></div></SuperRoute>} />
-        <Route path="rooms/seats" element={<SuperRoute><div className="table-widget"><div className="table-title">좌석 관리</div><p>준비중</p></div></SuperRoute>} />
+        {/* 장소 - 조회는 비로그인, CRUD는 중간관리자(8)+ */}
+        <Route path="rooms/list" element={<RoomList />} />
+        <Route path="rooms/seats" element={<ManagerRoute><div className="table-widget"><div className="table-title">좌석 관리</div><p>준비중</p></div></ManagerRoute>} />
         <Route path="settings/members" element={<SuperRoute><div className="table-widget"><div className="table-title">관리자 계정</div><p>준비중</p></div></SuperRoute>} />
       </Route>
     </Routes>
