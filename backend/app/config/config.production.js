@@ -14,7 +14,7 @@ module.exports = {
         origin: process.env.CORS_ORIGIN || true,
         credentials: true
     },
-    apiUrl: process.env.API_URL || 'https://attendseat-api.onrender.com/v1',
+    apiUrl: process.env.API_URL || 'https://attendseat.onrender.com/v1',
     jwt: {
         accessTokenExpire: '24h',
         refreshTokenExpire: '30d',
