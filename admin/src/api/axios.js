@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // export const baseURL = 'http://localhost:7800/v1';
-export const baseURL = import.meta.env.VITE_API_URL || 'https://attendseat.onrender.com/v1';
+export const baseURL = import.meta.env.VITE_API_URL || '/v1';
 
 const api = axios.create({
   baseURL: baseURL,
