@@ -1,0 +1,19 @@
+.p5 {
+  padding: 5px;
+}
+.mr16 {
+  margin-right: 16px !important;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.ft14 {
+  font-size: 14px;
+}
+.red {
+  color: red;
+}
+.fl-jc-c {
+  display: flex;
+  justify-content: center;
+}

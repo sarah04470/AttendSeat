@@ -1,7 +1,6 @@
 import axios from "axios";
 
-// 개발: localhost, 배포시: 실제 API 도메인으로 변경
-export const baseURL = 'http://localhost:7800/v1';
+export const baseURL = import.meta.env.VITE_API_URL || 'http://localhost:7800/v1';
 
 const api = axios.create({
   baseURL: baseURL,

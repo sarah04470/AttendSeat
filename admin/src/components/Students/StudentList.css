@@ -1,0 +1,498 @@
+/* 탭 바 */
+.student-tab-bar {
+  display: flex;
+  gap: 0;
+  margin: 24px 24px 0;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.student-tab-btn {
+  padding: 14px 28px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  color: #999;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+}
+
+.student-tab-btn:hover {
+  color: #555;
+}
+
+.student-tab-btn.active {
+  color: #555;
+  border-bottom-color: #555;
+}
+
+/* Student List Container */
+.student-list {
+  padding: 24px;
+}
+
+/* 필터 영역 */
+.student-list .filter-container {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* 학년 / 반 / 전공 가로 3등분 */
+.student-list .filter-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.student-list .filter-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 20px;
+  border-right: 1px solid #f0f0f0;
+}
+
+.student-list .filter-cell:first-child {
+  padding-left: 0;
+}
+
+.student-list .filter-cell:last-child {
+  border-right: none;
+}
+
+.student-list .filter-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #888;
+}
+
+.student-list .filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.student-list .filter-btn {
+  padding: 7px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: #999;
+  transition: all 0.15s;
+}
+
+.student-list .filter-btn:hover {
+  border-color: #b0c4de;
+  color: #5a7fa0;
+  background: #f7fafd;
+}
+
+.student-list .filter-btn.active {
+  background: #eef4fb;
+  color: #4a7fac;
+  border-color: #c2d6ea;
+  font-weight: 600;
+}
+
+.student-list .filter-btn.major.active {
+  background: #f5f0fa;
+  color: #8a70b0;
+  border-color: #d8cee8;
+}
+
+/* 검색 줄 */
+.student-list .filter-search-row {
+  display: flex;
+}
+
+.student-list .filter-search-form {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.student-list .search-input {
+  max-width: 300px;
+  flex: 1;
+  padding: 9px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 15px;
+  background: #fff;
+  transition: all 0.15s;
+}
+
+.student-list .search-input:focus {
+  outline: none;
+  border-color: #b0c4de;
+}
+
+.student-list .search-btn {
+  padding: 9px 20px;
+  background: #eef4fb;
+  color: #4a7fac;
+  border: 1px solid #c2d6ea;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+
+.student-list .search-btn:hover {
+  background: #e3edf7;
+}
+
+.student-list .filter-reset-btn {
+  padding: 9px 18px;
+  background: #fff;
+  color: #999;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+
+.student-list .filter-reset-btn:hover {
+  background: #f5f5f5;
+  color: #666;
+}
+
+/* 목록 영역 */
+.student-list .list-container {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.student-list .list-container .title-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.student-list .list-container .title-box .title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #333;
+}
+
+.student-list .list-container .title-box .count {
+  font-size: 15px;
+  color: #999;
+}
+
+/* 테이블 */
+.student-list .list-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-list .list-table .table-head {
+  background: #fafafa;
+  padding: 14px 12px;
+  text-align: center;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.student-list .list-table .table-data {
+  padding: 13px 12px;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 15px;
+  color: #555;
+  text-align: center;
+}
+
+.student-list .list-table .body-row {
+  transition: background-color 0.1s;
+}
+
+.student-list .list-table .body-row:hover {
+  background: #fafafa;
+}
+
+/* 뱃지 */
+.student-list .major-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.student-list .major-badge.music {
+  background: #f3f0ff;
+  color: #8b7bc7;
+}
+
+.student-list .major-badge.art {
+  background: #fdf2f8;
+  color: #c78ba0;
+}
+
+.student-list .gender-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.student-list .gender-badge.male {
+  color: #7aa3cc;
+}
+
+.student-list .gender-badge.female {
+  color: #cc8ea3;
+}
+
+.student-list .status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.student-list .status-badge.active {
+  background: #f0f9f4;
+  color: #5a9a72;
+}
+
+.student-list .status-badge.inactive {
+  background: #f5f5f5;
+  color: #999;
+}
+
+.student-list .sub-major-text {
+  font-size: 14px;
+  color: #999;
+}
+
+.student-list .student-id {
+  font-family: 'SF Mono', 'Consolas', monospace;
+  font-size: 14px;
+  color: #7aa3cc;
+  font-weight: 500;
+}
+
+.student-list .no-data {
+  text-align: center;
+  padding: 60px 40px;
+  color: #bbb;
+  font-size: 16px;
+}
+
+/* 수정 버튼 */
+.student-list .edit-btn {
+  padding: 5px 14px;
+  background: #f5f7fa;
+  color: #5a7fa0;
+  border: 1px solid #d8e2ec;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.student-list .edit-btn:hover {
+  background: #eaf1f8;
+  border-color: #b8cce0;
+}
+
+/* 페이지네이션 */
+.student-list .pagination-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+/* ===== 수정 모달 ===== */
+.edit-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1200;
+}
+
+.edit-modal {
+  background: #fff;
+  border-radius: 12px;
+  width: 520px;
+  max-width: 92vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.edit-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 28px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.edit-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.edit-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.edit-modal-close:hover {
+  color: #555;
+}
+
+.edit-modal-body {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.edit-row {
+  display: flex;
+  gap: 14px;
+}
+
+.edit-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.edit-field.wide {
+  flex: 1.5;
+}
+
+.edit-field.full {
+  flex: 1;
+  width: 100%;
+}
+
+.edit-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+}
+
+.edit-input,
+.edit-select,
+.edit-textarea {
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #333;
+  background: #fff;
+  transition: border-color 0.15s;
+}
+
+.edit-input:focus,
+.edit-select:focus,
+.edit-textarea:focus {
+  outline: none;
+  border-color: #a0b8d0;
+}
+
+.edit-textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.edit-select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+.edit-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 28px 22px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.edit-cancel-btn {
+  padding: 10px 24px;
+  background: #fff;
+  color: #888;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.edit-cancel-btn:hover {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.edit-save-btn {
+  padding: 10px 28px;
+  background: #4b6a8a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.edit-save-btn:hover {
+  background: #3d5a78;
+}
+
+.edit-save-btn:disabled {
+  background: #a0b0c0;
+  cursor: not-allowed;
+}

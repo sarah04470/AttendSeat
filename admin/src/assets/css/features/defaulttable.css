@@ -1,0 +1,39 @@
+.table-widget {
+  width: 100%;
+  font-size: 15px;
+}
+.table-widget .table-title {
+  font-size: 18px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.table-widget .text-left {
+  text-align: left;
+}
+.table-widget .W100 {
+  width: 100%;
+}
+.table-widget table th {
+  background-color: #fbfbfb;
+  border-right: 1px solid #e6e6e6;
+  text-align: center;
+}
+.table-widget table td {
+  padding: 0 10px;
+  text-align: center;
+  border-right: 1px solid #e6e6e6;
+}
+.table-widget table tr {
+  border: 1px solid #e6e6e6;
+}
+.table-widget table .btn-wrap {
+  padding: 5px;
+  font-size: 20px;
+}
+.table-widget table .content {
+  max-width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

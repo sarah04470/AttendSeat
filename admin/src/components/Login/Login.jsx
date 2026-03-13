@@ -58,7 +58,12 @@ export default function Login() {
             <FilledInput
               type="text"
               disableUnderline={true}
-              startAdornment={<InputAdornment position="start"><Person /></InputAdornment>}
+              startAdornment={
+                <InputAdornment position="start" sx={{ mt: '0 !important', alignSelf: 'center' }}>
+                  <Person sx={{ fontSize: 20, color: '#999' }} />
+                </InputAdornment>
+              }
+              sx={{ alignItems: 'center', borderRadius: '8px', py: '2px' }}
               autoComplete="off"
               autoFocus={true}
               placeholder="아이디"
@@ -70,7 +75,12 @@ export default function Login() {
             <FilledInput
               type="password"
               disableUnderline={true}
-              startAdornment={<InputAdornment position="start"><Lock /></InputAdornment>}
+              startAdornment={
+                <InputAdornment position="start" sx={{ mt: '0 !important', alignSelf: 'center' }}>
+                  <Lock sx={{ fontSize: 20, color: '#999' }} />
+                </InputAdornment>
+              }
+              sx={{ alignItems: 'center', borderRadius: '8px', py: '2px' }}
               autoComplete="off"
               placeholder="비밀번호"
               name="password"

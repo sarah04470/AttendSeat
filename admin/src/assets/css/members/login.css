@@ -3,46 +3,88 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #f2f3f5;
 }
 
 .login-box {
   background: #fff;
-  border-radius: 16px;
-  padding: 48px 40px;
+  border-radius: 14px;
+  padding: 52px 44px 44px;
   width: 100%;
-  max-width: 420px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  max-width: 400px;
+  border: 1px solid #e4e6ea;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 .login-title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   text-align: center;
   margin-bottom: 4px;
-  color: #333;
+  color: #2d2d2d;
+  letter-spacing: -0.5px;
 }
 
 .login-subtitle {
   font-size: 14px;
   text-align: center;
-  margin-bottom: 32px;
-  color: #999;
+  margin-bottom: 36px;
+  color: #aaa;
+}
+
+/* MUI FilledInput 커스텀 */
+.login-box .MuiFilledInput-root {
+  background: #f7f8fa !important;
+  border-radius: 8px !important;
+  border: 1px solid #e8e8e8;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.login-box .MuiFilledInput-root:hover {
+  background: #f3f4f6 !important;
+  border-color: #d0d0d0;
+}
+
+.login-box .MuiFilledInput-root.Mui-focused {
+  background: #fff !important;
+  border-color: #a0b8d0;
+}
+
+.login-box .MuiFilledInput-input {
+  padding: 14px 14px 14px 4px !important;
+  font-size: 15px;
+  color: #333;
+}
+
+.login-box .MuiFilledInput-input::placeholder {
+  color: #bbb !important;
+  opacity: 1 !important;
+  font-size: 15px;
+}
+
+.login-box .MuiInputAdornment-root {
+  margin-top: 0 !important;
+  margin-right: 4px;
 }
 
 .login-btn {
   width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 15px;
+  background: #4b6a8a;
   color: #fff;
   border: none;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: background 0.15s;
+  letter-spacing: 0.5px;
 }
 
 .login-btn:hover {
-  opacity: 0.9;
+  background: #3d5a78;
+}
+
+.login-btn:active {
+  background: #34506c;
 }

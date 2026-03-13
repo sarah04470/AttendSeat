@@ -1,0 +1,27 @@
+.wed-app-bar.MuiPaper-root {
+  background-color: #4b89da;
+  color: #fff;
+  font-weight: bold;
+}
+.main-aside-menu .sub-menu {
+  color: #868686;
+}
+
+.main-aside-menu .sub-menu .sub-menu-item .on .MuiTypography-root {
+  color: #4b89da;
+  font-weight: bold;
+}
+
+.main-box .MuiToolbar-root {
+  min-height: 48px;
+}
+
+.main-box .main-box-menu .MuiTypography-root {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, .87);
+}
+.main-box .main-box-menu .on .MuiTypography-root {
+  color: #4b89da;
+  font-weight: bold;
+}

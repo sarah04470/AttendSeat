@@ -1,0 +1,27 @@
+.pagination {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.pagination li {
+  margin-right: 10px;
+}
+.pagination li:last-child {
+  margin-right: 0;
+}
+.pagerow {
+  display: flex;
+  align-items: center;
+}
+.pagerow .title {
+  font-size: 14px;
+}
+.pagerow .pagerow-tab {
+  min-height: unset;
+}
+.pagerow .pagerow-tab .tab {
+  padding: 0;
+  height: 30px;
+  min-height: unset;
+}

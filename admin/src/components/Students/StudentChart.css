@@ -1,0 +1,161 @@
+/* 반 조직도 */
+.student-chart {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* 학년 */
+.chart-grade .grade-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.chart-grade .grade-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.chart-grade .grade-count {
+  font-size: 15px;
+  color: #999;
+}
+
+/* 반 카드 가로 배치 */
+.chart-grade .grade-classes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+/* 반 카드 */
+.class-card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.class-card .class-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.class-card .class-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.class-card .class-name {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.class-card .class-major {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.5);
+}
+
+.class-card .class-stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.class-card .stat-total {
+  font-size: 15px;
+  font-weight: 600;
+  color: #555;
+}
+
+.class-card .stat-gender {
+  font-size: 14px;
+  color: #999;
+}
+
+.class-card .stat-male {
+  color: #7aa3cc;
+  font-weight: 500;
+}
+
+.class-card .stat-female {
+  color: #cc8ea3;
+  font-weight: 500;
+}
+
+.class-card .stat-divider {
+  color: #ddd;
+  margin: 0 2px;
+}
+
+/* 학생 칩 리스트 */
+.class-card .class-students {
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.student-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.1s;
+}
+
+.student-chip:hover {
+  background: #fafafa;
+}
+
+.student-chip .chip-number {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.student-chip .chip-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
+  min-width: 55px;
+}
+
+.student-chip .chip-gender {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.student-chip .chip-gender.male {
+  color: #7aa3cc;
+}
+
+.student-chip .chip-gender.female {
+  color: #cc8ea3;
+}
+
+.student-chip .chip-sub-major {
+  font-size: 14px;
+  color: #bbb;
+  margin-left: auto;
+}

@@ -1,20 +1,20 @@
 module.exports = {
     apiVersion: 'v1',
-    appPort: 7800,
-    secretKey: 'attendseat',
+    appPort: process.env.PORT || 7800,
+    secretKey: process.env.SECRET_KEY || 'attendseat',
     database: {
-        host: 'localhost',       // 배포시 변경
-        username: 'root',        // 배포시 변경
-        password: '',            // 배포시 변경
-        port: 4000,              // TiDB 포트
-        database: 'AttendSeat',
+        host: process.env.DB_HOST || 'gateway01.ap-northeast-1.prod.aws.tidbcloud.com',
+        username: process.env.DB_USER || '4QvHLHjP22aevU1.root',
+        password: process.env.DB_PASS || 'DUXik8SMIzwYUsOS',
+        port: process.env.DB_PORT || 4000,
+        database: process.env.DB_NAME || 'attendseat',
         ssl: { rejectUnauthorized: true }
     },
     cors: {
-        origin: true,
+        origin: process.env.CORS_ORIGIN || true,
         credentials: true
     },
-    apiUrl: 'https://api.attendseat.com/v1', // 실제 도메인으로 변경
+    apiUrl: process.env.API_URL || 'https://attendseat-api.onrender.com/v1',
     jwt: {
         accessTokenExpire: '24h',
         refreshTokenExpire: '30d',

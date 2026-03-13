@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app --dev",
-    "server": "nodemon app"
+    "server": "nodemon app",
+    "start": "node app"
   },
   "dependencies": {
     "axios": "^1.6.0",

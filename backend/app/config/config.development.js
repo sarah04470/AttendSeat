@@ -3,12 +3,12 @@ module.exports = {
     appPort: 7800,
     secretKey: 'attendseat',
     database: {
-        host: 'localhost',       // TiDB 연결시 변경
-        username: 'root',        // TiDB 연결시 변경
-        password: '',            // TiDB 연결시 변경
-        port: 3306,              // TiDB는 4000
-        database: 'AttendSeat',  // TiDB 연결시 변경
-        // ssl: { rejectUnauthorized: true }  // TiDB 사용시 주석 해제
+        host: 'gateway01.ap-northeast-1.prod.aws.tidbcloud.com',
+        username: '4QvHLHjP22aevU1.root',
+        password: 'DUXik8SMIzwYUsOS',
+        port: 4000,
+        database: 'attendseat',
+        ssl: { rejectUnauthorized: true }
     },
     cors: {
         origin: true,
