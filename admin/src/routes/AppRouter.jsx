@@ -7,6 +7,7 @@ import Dashboard from "../components/Dashboard/Dashboard.jsx";
 import Login from "../components/Login/Login.jsx";
 import StudentPage from "../components/Students/StudentPage.jsx";
 import RoomList from "../components/Rooms/RoomList.jsx";
+import DefaultRoom from "../components/Students/DefaultRoom.jsx";
 
 // 중간관리자 이상 (mem_auth >= 8) - 학생정보 수정, 자리 이동/수정
 function ManagerRoute({ children }) {
@@ -81,7 +82,7 @@ function AppRouterContent() {
 
         {/* 중간관리자(8) - 자리이동/수정, 학생정보 수정 */}
         <Route path="students/edit/:id" element={<ManagerRoute><div className="table-widget"><div className="table-title">학생 정보 수정</div><p>준비중</p></div></ManagerRoute>} />
-        <Route path="students/default-room" element={<ManagerRoute><div className="table-widget"><div className="table-title">기본 배정</div><p>준비중</p></div></ManagerRoute>} />
+        <Route path="students/default-room" element={<ManagerRoute><DefaultRoom /></ManagerRoute>} />
         <Route path="attendance/manage" element={<ManagerRoute><div className="table-widget"><div className="table-title">자리 이동/수정</div><p>준비중</p></div></ManagerRoute>} />
 
         {/* 장소 - 조회는 비로그인, CRUD는 중간관리자(8)+ */}
