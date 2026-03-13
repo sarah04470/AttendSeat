@@ -1,0 +1,31 @@
+{
+  "name": "attendseat-server",
+  "version": "1.0.0",
+  "description": "AttendSeat - 야자 좌석 관리 시스템",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app --dev",
+    "server": "nodemon app"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "exceljs": "^4.4.0",
+    "express": "^4.18.2",
+    "express-useragent": "^1.0.15",
+    "jsonwebtoken": "^9.0.0",
+    "knex": "^2.4.2",
+    "md5": "^2.3.0",
+    "moment-timezone": "^0.5.45",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.11.0",
+    "randomstring": "^1.2.3",
+    "request-ip": "^3.3.0",
+    "sha256": "^0.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
